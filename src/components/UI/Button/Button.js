@@ -1,8 +1,9 @@
 import React from "react";
 import classes from "./Button.css";
 const button = (props)=> {
+    console.log(props.disabled)
  return(
-    <button className={[classes.Button,classes[props.btnType]].join(" ")}
+    <button disabled={props.disabled} className={[classes.Button,classes[props.btnType]].join(" ")}
     onClick={props.clicked}>{props.children}
     </button>
 	);
