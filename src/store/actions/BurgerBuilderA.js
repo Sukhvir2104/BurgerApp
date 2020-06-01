@@ -1,6 +1,7 @@
 import * as actionTypes from "./actionTypes";
 import axios from "../../axios";
 
+
 export const addIngredient =(name) => {
     return{
         type:actionTypes.ADD_INGREDIENTS,
@@ -26,7 +27,7 @@ export const fetchIngredientsFailed =() => {
 }
 export const initIngredients =() => {
     return dispatch =>{
-        axios.get("https://burgerapp-c6517.firebaseio.com/ingredients.json")
+        axios.get(process.env.REACT_APP_GET_INGREDIENTS)
         .then(response=> {
             dispatch(setIngredients(response.data))
         })

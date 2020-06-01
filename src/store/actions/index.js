@@ -9,3 +9,6 @@ export {purchaseBurger,
     purchaseInit,
     fetchOrder
 } from "./OrderA";
+
+export {auth,authLogOut,setAuthRedirectPath,authCheckState}
+from "./authA";

@@ -4,11 +4,7 @@ import CheckoutSummary from "../../components/orders/CheckoutSummary/CheckoutSum
 import ContactData from "./ContactData/ContactData";
 import {Route,Redirect} from "react-router-dom";
 import { connect } from "react-redux";
-import * as action from "../../store/actions/index"
 class Checkout extends Component{
-    componentWillMount(){
-       
-    }
     chekoutCanceled=()=>{
         return this.props.history.goBack();
     }

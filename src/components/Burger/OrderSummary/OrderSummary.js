@@ -1,13 +1,9 @@
 import React,{Component} from "react";
 import Auxiliary from "../../../hoc/Auxiliary/Auxiliary";
 import Button from "../../UI/Button/Button";
-import {Link} from "react-router-dom";
 class OrderSummary extends Component{
     //this will be functiom, no nedd to be class component
-      componentWillUpdate(){
-          console.log("[ordersummery.js] update");
-          
-      }
+    
     render(){
         const ingredientSummary = Object.keys(this.props.ingredients)
         .map(igkey=>{

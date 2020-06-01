@@ -16,12 +16,12 @@ if(props.open){
             <div className={classes.DesktopOnly}>
                   <Backdrop show={props.open} clicked={props.closed} />
             </div> 
-            <div className={attachedClasses.join(" ")}>
+            <div className={attachedClasses.join(" ")} onClick={props.closed}>
                 <div className={classes.Logo}>
                 <Logo />
                     </div>
                 <nav>
-                    <Navigation />
+                    <Navigation isAuth={props.isAuthenticated} />
                 </nav>
             </div>
         </Auxiliary>
