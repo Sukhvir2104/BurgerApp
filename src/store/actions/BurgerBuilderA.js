@@ -1,5 +1,4 @@
 import * as actionTypes from "./actionTypes";
-import axios from "../../axios";
 
 
 export const addIngredient =(name) => {
@@ -26,13 +25,8 @@ export const fetchIngredientsFailed =() => {
     }
 }
 export const initIngredients =() => {
-    return dispatch =>{
-        axios.get(process.env.REACT_APP_GET_INGREDIENTS)
-        .then(response=> {
-            dispatch(setIngredients(response.data))
-        })
-        .catch(error=> this.setState({error:true}))
-        
+    return{
+        type:actionTypes.INIT_INGREDIENTS
     }
 }
 
