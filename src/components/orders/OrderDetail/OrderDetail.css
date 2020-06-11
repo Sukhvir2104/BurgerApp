@@ -2,44 +2,53 @@
     width: 80%;
     border:1px solid #eee;
     box-shadow: 0 2px 3px #ccc ;
-    padding: 10px;
+    padding: 1rem 1rem 5.31rem;
     margin: 10px auto;
     box-sizing: border-box;
 }
 .ingredientBox{
     text-transform: capitalize;
     display: inline-block;
-    margin: 0px 8px;
+    margin: 8px 8px;
     border: 1px solid #ccc;
     padding: 8px;
 
 }
-.deleteButton{
+.flipBackButton{
+
     float: right;
     margin-right: 0px;
-    color: #8f5c2c;
     background-color: #fff;
+    color: #8f5c2c;
+    border: none;
+    width: 40px;
+    height: 36px;
+    cursor: pointer;
+    outline: none;
+    margin: -4.5rem 4.3rem 0 0;
+  }
+  .deleteButton{
+ 
+    float: right;
+    margin-right: 0px;
+    background-color: #fff;
+    color: #8f5c2c;
     border: none;
     width: 36px;
     height: 36px;
     cursor: pointer;
     outline: none;
-    margin: -72px 20px 0px 0px;
+    margin: -4.5rem 1.25rem 0 0;
   }
-  .detailButton{
-    float: right;
-    margin-right: 0px;
-    color: #8f5c2c;
-    border: none;
-    background-color: #fff;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    outline: none;
-    margin: -72px 70px 0px 0px;
-  }
-  @media(max-width:500px){
-    .ingredientBox{
-     
+@media(max-width:500px){
+    .deleteButton{
+        float: left;
+        margin: 1rem 0px 0 0.25rem;
+    }
+}
+@media(max-width:500px){
+    .flipBackButton{
+        float: left;
+        margin: 1rem 0px 0 1.25rem;
     }
 }

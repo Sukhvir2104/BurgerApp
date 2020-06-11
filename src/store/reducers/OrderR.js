@@ -4,7 +4,8 @@ import { updateObject } from '../shared/utility';
 const initialState = {
     orders: [],
     loading: false,
-    purchased: false
+    purchased: false,
+    orderId:[],
 };
 
 const purchaseInit = ( state, action ) => {
@@ -33,13 +34,28 @@ const fetchOrdersStart = ( state, action ) => {
 };
 
 const fetchOrdersSuccess = ( state, action ) => {
+    
     return updateObject( state, {
-        orders: action.orders,
-        loading: false
+        orders:action.orders,
+        loading: false,
+        orderId:action.orders.map(ig=>ig.id)
+
     } );
 };
 
 const fetchOrdersFail = ( state, action ) => {
+    return updateObject( state, { loading: false } );
+};
+const orderDeleteStart = ( state, action ) => {
+    return updateObject( state, { loading: true } );
+};
+const orderDeleteSuccess = ( state, action ) => {
+    return updateObject( state, {
+        orders: state.orders.filter(data=>data.id !==action.orders),
+        loading: false
+    } );
+};
+const orderDeleteFail = ( state, action ) => {
     return updateObject( state, { loading: false } );
 };
 
@@ -52,6 +68,9 @@ const reducer = ( state = initialState, action ) => {
         case actionTypes.FETCH_ORDER_START: return fetchOrdersStart( state, action );
         case actionTypes.FETCH_ORDER_SUCCESS: return fetchOrdersSuccess( state, action );
         case actionTypes.FETCH_ORDER_FAIL: return fetchOrdersFail( state, action );
+        case actionTypes.ORDER_DELETE_FAIL: return orderDeleteFail( state, action );
+        case actionTypes.ORDER_DELETE_START: return orderDeleteStart( state, action );
+        case actionTypes.ORDER_DELETE_SUCCESS: return orderDeleteSuccess( state, action );
         default: return state;
     }
 };

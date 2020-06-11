@@ -56,3 +56,28 @@ export const fetchOrder =(token,userId)=>{
         userId:userId
     }
 }
+//--------------------------orderSummary delete-----------------------
+export const orderDeleteSuccess =orders=>{
+    return{
+        type:actionTypes.ORDER_DELETE_SUCCESS,
+        orders:orders
+    }
+}
+export const orderDeleteFail =error=>{
+    return{
+        type:actionTypes.ORDER_DELETE_FAIL,
+        error:error
+    }
+}
+export const orderDeleteStart =()=>{
+    return{
+        type:actionTypes.ORDER_DELETE_START,
+    }
+}
+export const orderDelete =(token,orderId)=>{
+    return{
+        type:actionTypes.ORDER_DELETE,
+        token:token,
+        orderId:orderId
+    }
+}

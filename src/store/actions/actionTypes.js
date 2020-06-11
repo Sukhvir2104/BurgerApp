@@ -15,6 +15,10 @@ export const FETCH_ORDER="FETCH_ORDER";
 export const FETCH_ORDER_START ="FETCH_ORDER_START"
 export const FETCH_ORDER_SUCCESS ="FETCH_ORDER_SUCCESS"
 export const FETCH_ORDER_FAIL ="FETCH_ORDER_FAIL"
+export const ORDER_DELETE="ORDER_DELETE"
+export const ORDER_DELETE_FAIL ="ORDER_DELETE_FAIL"
+export const ORDER_DELETE_START ="ORDER_DELETE_START"
+export const ORDER_DELETE_SUCCESS ="ORDER_DELETE_SUCCESS"
 //-----------------------------for authenication-------------------------
 export const AUTH_USER="AUTH_USER";
 export const AUTH_CHECK_STATE="AUTH_CHECK_STATE";

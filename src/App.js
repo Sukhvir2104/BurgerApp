@@ -4,7 +4,10 @@ import Layout from "./hoc/layout/layout";
 import * as actions from "./store/actions/index";
 import BurgerBuilder from "./containers/BurgerBuilder/BurgerBuilder";
 import { Route, Switch ,Redirect} from "react-router-dom";
+import OrderDetails from './containers/Orders/OrderDetails/OrderDetails';
+import check from "./containers/Checkout/Checkout";
 import Logout from "./containers/Auth/logout/logout";
+
 import {connect} from "react-redux";
 
 const Checkout = React.lazy(() => {
@@ -36,10 +39,12 @@ const  {onTryAutoSignup}=props;
     if(props.isAuthenticated){
       routes=(
         <Switch>
+              <Route path="/orders/:id"  render={(props)=><OrderDetails {...props} />} />
               <Route path="/checkout" render={(props)=> <Checkout {...props} />} />
               <Route path="/orders" render={(props)=> <Orders {...props} />} />
               <Route path="/logout" component={Logout} />
               <Route path="/auth" render={(props)=> <Auth {...props} />} />
+              
               <Route path="/" exact component={BurgerBuilder} />
               <Redirect to="/" />
           </Switch>

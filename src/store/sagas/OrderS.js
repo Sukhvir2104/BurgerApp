@@ -1,7 +1,7 @@
 import {put} from "redux-saga/effects";
 import * as actions from "../actions/index";
 //import {delay} from "redux-saga/effects";
-import axios from "../../axios"
+import axios from "../../axios";
 
 export function* purchaseBurgerSaga(action){
     yield put(actions.purchaseBurgerStart())
@@ -15,6 +15,7 @@ export function* purchaseBurgerSaga(action){
 export function* fetchOrderSaga(action){
     yield put(actions.fetchOrderStart())
         const querryParams = '?auth='+ action.token +'&orderBy="userId"&equalTo="'+ action.userId +'"' ;
+
      try{
         const response= yield axios.get('/order.json'+querryParams)
         const fetchedOrder=[];
@@ -26,4 +27,14 @@ export function* fetchOrderSaga(action){
       
        
 
+}
+
+export function* orderDeleteSaga(action){
+    let fetchedOrder=[];
+    yield put(actions.orderDeleteStart())  
+     try{
+        const response= yield axios.delete(`/order/${action.orderId}.json?auth=`+action.token)
+            fetchedOrder = yield action.orderId;
+            yield put(actions.orderDeleteSuccess(fetchedOrder))
+     }  catch(error){yield put(actions.orderDeleteFail(error))}; 
 }

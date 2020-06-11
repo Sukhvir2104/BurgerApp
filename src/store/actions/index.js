@@ -15,7 +15,11 @@ export {purchaseBurger,
     purchaseBurgerSucess,
     fetchOrderSuccess,
     fetchOrderFail,
-    fetchOrderStart
+    fetchOrderStart,
+    orderDelete,
+    orderDeleteStart,
+    orderDeleteSuccess,
+    orderDeleteFail
 } from "./OrderA";
 
 export {auth,authLogOut,
