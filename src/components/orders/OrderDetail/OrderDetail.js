@@ -25,6 +25,7 @@ return(<div className={classes.Order}>
     <p>Name: {props.name}</p>
     <p>Email: {props.email}</p>
     <p>Delivery Methode: {props.deliveryMethod}</p>
+    <p>Date: {props.Date}</p>
     <button className={classes.flipBackButton} onClick={()=>props.flipBackContinued()}>
              <FlipToBackIcon style={{ fontSize: 40}}/>
         </button>

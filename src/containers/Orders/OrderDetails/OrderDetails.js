@@ -17,19 +17,27 @@ const orderDetails =(props)=>{
 const flipBackContinued =()=>{
     return props.history.replace("/orders");
 }
+
+
+// let orderdetail=true
+
 const deleteOrderHandler=(id)=>{
     props.onOrderDelete(props.token,orderDetail.id);
+    // if(props.orderRed){
         props.history.replace("/orders");
+    // }
+       
 }
 
   
  // console.log(orderDetail);
   
-    return(<OrderDetail  ingredients={orderDetail.ingredients} price={orderDetail.price}
-         deliveryMethod={orderDetail.orderData.deliveryMethod} name={orderDetail.orderData.name} 
-         email={orderDetail.orderData.email} flipBackContinued={flipBackContinued}
-         deleteItem={deleteOrderHandler}
-    />);
+    return( <OrderDetail  ingredients={orderDetail.ingredients} price={orderDetail.price}
+        deliveryMethod={orderDetail.orderData.deliveryMethod} name={orderDetail.orderData.name} 
+        email={orderDetail.orderData.email} Date={orderDetail.Date}
+        flipBackContinued={flipBackContinued}
+        deleteItem={deleteOrderHandler}
+    /> );
 }
 const mapStateToProps = state =>{
     return{

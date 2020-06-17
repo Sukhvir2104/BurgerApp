@@ -6,6 +6,7 @@ const initialState = {
     loading: false,
     purchased: false,
     orderId:[],
+    orderRed:false
 };
 
 const purchaseInit = ( state, action ) => {
@@ -52,7 +53,8 @@ const orderDeleteStart = ( state, action ) => {
 const orderDeleteSuccess = ( state, action ) => {
     return updateObject( state, {
         orders: state.orders.filter(data=>data.id !==action.orders),
-        loading: false
+        loading: false,
+        orderRed:true
     } );
 };
 const orderDeleteFail = ( state, action ) => {

@@ -1,0 +1,63 @@
+.div,h1,p,body,header,footer,h2,h3,h4,h5,h6,img{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    height:800px;
+}
+.menuContentWrapper{
+    width: 80%;
+    /* height: 200px; */
+    /* border:1px solid #eee;
+    box-shadow: 0 2px 3px #ccc ;
+    box-sizing: border-box; */
+    margin: 10% auto;
+}
+@media(max-width:576px){
+    .menuContentWrapper{
+        height: 100%;
+    }
+
+}
+.menuImgwrapper{
+    /* width: 35%; */
+    height: 100%;
+    /* background-color: tomato; */
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+.menuContent{
+    /* width: 65%; */
+    height: 100%;
+  /* //  background-color: aqua; */
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 1%;
+}
+.menuImg{
+    /* height: 100%; */
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.selectDiv{
+   margin:5% auto;
+   width:25%;
+}
+.selectButton{
+   width:100%;
+   margin: 0 25% 0 0;
+   border:2px solid rgb(161, 156, 156);
+   box-shadow: 0 2px 3px #eee ;
+   box-sizing: border-box; 
+   border-radius: 7%;
+   color:#944317;
+   font-weight: bold;
+   
+}
+.selectButton:hover{
+    color: orangered;
+
+}

@@ -22,6 +22,7 @@ export function* fetchOrderSaga(action){
             for(let key in response.data){
                 fetchedOrder.push({...response.data[key],id:key})
             }
+
             yield put(actions.fetchOrderSuccess(fetchedOrder))
      }  catch(error){yield put(actions.fetchOrderFail(error))}; 
       

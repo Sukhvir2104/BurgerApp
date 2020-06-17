@@ -1,0 +1,3 @@
+# need ajust the order button at home page , to know the bug give diffrent background color to button
+# adjust burger builder page ,put the contolos on right side insted at the bottom
+# when deleting the orderSummaryDetail ,if conditon is not working, if we want to confirm that orderRed is turns to true in  orderR file 

@@ -109,14 +109,16 @@ const contactData = (props)=>{
         for (let formElementIdentifier in orderForm) {
             formData[formElementIdentifier] = orderForm[formElementIdentifier].value;
         }
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+'  ( '+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()+' )';
         const order = {
             ingredients: props.ings,
             price: props.price,
             orderData: formData,
             userId:props.userId,
-            
+            Date:date
         }
-        // console.log(this.props.userId)
+         
         props.onOrderBurger(order,props.token);
     //    axios.post("/order.json",order)
     //    .then(response=> {

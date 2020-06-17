@@ -11,6 +11,8 @@ const checkout= (props)=>{
    const chekoutContinued=()=>{
         return props.history.replace("/checkout/contact-data");
     }
+    
+
        let summary=<Redirect path="/"/>
        if(props.ings){
            const purchasedRedirect = props.purchased ? <Redirect path="/" />:null

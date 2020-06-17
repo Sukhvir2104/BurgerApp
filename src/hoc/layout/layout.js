@@ -3,6 +3,7 @@ import Auxiliary from "../Auxiliary/Auxiliary";
 import classes from "./layout.css";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import Sidedrawer from "../../components/Navigation/SideDrawer/Sidedrawer";
+import ToolbarFooter from "../../components/Footer/ToolbarFooter/ToolbarFooter";
 import { connect } from "react-redux";
 
 const layout=(props)=>{
@@ -28,6 +29,7 @@ const layout=(props)=>{
                  closed={removeSideDrawerHandler} 
                  isAuthenticated={props.isAuthenticated}/>
                 <main className={classes.content}>{props.children}</main>
+                <ToolbarFooter />
             </Auxiliary>
         );
 }
