@@ -39,7 +39,9 @@ export {
     fetchBurgerMenuSuccess,
     fetchBurgerMenuFail,
     fetchBurgerMenuStart,
-    toggleSelect 
+    toggleSelect ,
+    quantitySelectAdd,
+    quantitySelectSub
     
   
 } from "./menuA";

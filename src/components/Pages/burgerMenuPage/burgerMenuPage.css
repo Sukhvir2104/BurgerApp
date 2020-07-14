@@ -61,3 +61,148 @@
     color: orangered;
 
 }
+.quantityButtonWrapper{
+    width:100%;
+    margin: 10px auto;
+    /* animation-name: openModal;
+    animation-duration: 1s;   
+     animation-fill-mode: forwards; */
+    transition: all 0.3s ease-out;
+}
+.quantityButtonContainer{
+    width:13%;
+    margin:  auto;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative; 
+     /* animation-name: openModal;
+    animation-duration: 1s;   
+   animation-fill-mode: forwards; 
+    transition: all 1s ease-out; */
+  }
+.ModalOpen { 
+    animation: openModal 1s ease-out forwards;
+    /* position: relative;
+    animation-name: openModal;
+    animation-duration: 1s;   
+   animation-fill-mode: forwards;
+   transition: all 1s ease-out; */
+} 
+
+.ModalClosed {
+    animation: closeModal 1s ease-out forwards;
+    /* position: relative;
+    animation-name: closeModal;
+    animation-duration: 1s;   
+   animation-fill-mode: forwards; */
+}
+
+@keyframes openModal {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(90%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes closeModal {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(60%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+}
+/*   
+  @keyframes example {
+    from {top: -50px;}
+    to {top: 0px;}
+  } */
+@media(max-width:400px){
+   .quantityButtonContainer{
+    width:45%;
+   } 
+}
+@media(max-width:600px){
+    .quantityButtonContainer{
+     width:30%;
+    } 
+ }
+ @media(max-width:700px){
+    .quantityButtonContainer{
+     width:25%;
+    } 
+ }
+ @media(max-width:900px){
+    .quantityButtonContainer{
+     width:20%;
+    } 
+ }
+.quantitySub{
+    float: left;
+     width: 50px;
+     border:2px solid rgb(161, 156, 156);
+     box-shadow: 0 2px 3px #eee ;
+     border-radius: 20%;
+     color:#944317;
+     font-weight: bold;
+}
+.quantitySub:hover{
+    color: #eee;
+    background-color:#944317 ;
+
+}
+.quantitySub:disabled {
+    background-color: #C7C6C6;
+    cursor: not-allowed;
+    border: 1px solid #ccc;
+    color: #888888;
+}
+
+.quantitySub:not(:disabled) {
+    animation: enable 0.3s linear;
+}
+
+@keyframes enable {
+    0% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.quantityText{
+    float: left;
+    margin:0px 10px 0px 10px ;
+}
+.quantityAdd{
+    float: left;
+    width: 50px;
+    border:2px solid rgb(161, 156, 156);
+    box-shadow: 0 2px 3px #eee ;
+    border-radius: 20%;
+    color:#944317;
+    font-weight: bold;
+}
+.quantityAdd:hover{
+    color: #eee;
+    background-color:#944317 ;
+
+}

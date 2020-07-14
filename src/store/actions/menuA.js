@@ -25,3 +25,9 @@ export const fetchBurgerMenu =()=>{
 export const toggleSelect = id => {
     return { type: actionTypes.TOGGLE_SELECT, productId: id };
 };
+export const quantitySelectAdd = (id) => {
+    return { type: actionTypes.QUANTITY_SELECT_ADD, productId: id };
+};
+export const quantitySelectSub = (id) => {
+    return { type: actionTypes.QUANTITY_SELECT_SUB, productId: id };
+};

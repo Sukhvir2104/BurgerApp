@@ -8,6 +8,7 @@ import OrderDetails from './containers/Orders/OrderDetails/OrderDetails';
 import Home from "./containers/Home/HomeCon";
 import Logout from "./containers/Auth/logout/logout";
 import MenuPage from "./containers/Home/MenuPages/MenuPages";
+import Cart from "./containers/CartCon/CartCon";
 
 import {connect} from "react-redux";
 
@@ -35,6 +36,7 @@ const  {onTryAutoSignup}=props;
                
               <Route path="/auth" render={(props)=> <Auth {...props} /> }/>
               <Route path="/burgermenu" exact render={(props)=> <MenuPage {...props} /> } />
+              <Route path="/cart" exact render={(props)=> <Cart {...props} /> } />
               <Route path="/burgerBuilder" exact component={BurgerBuilder} />
               <Route path="/" render={(props)=> <Home {...props} /> }/>
               <Redirect to="/" />
@@ -45,6 +47,7 @@ const  {onTryAutoSignup}=props;
         <Switch>
               <Route path="/orders/:id"  render={(props)=><OrderDetails {...props} />} />
               <Route path="/burgermenu" exact render={(props)=> <MenuPage {...props} /> } />
+              <Route path="/cart" exact render={(props)=> <Cart {...props} /> } />
               <Route path="/checkout" render={(props)=> <Checkout {...props} />} />
               <Route path="/orders" render={(props)=> <Orders {...props} />} />
               <Route path="/logout" component={Logout} />

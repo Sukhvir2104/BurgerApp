@@ -41,7 +41,36 @@ const productReducer = (state, action) => {
           BurgerMenu: updatedProducts
         };
   };
-
+  const quantitySelectAdd = (state, action) => {
+    const prodIndex = state.BurgerMenu.findIndex(
+      p => p.id === action.productId
+    );
+    const newFavStatus = state.BurgerMenu[prodIndex].Quantity+1;
+    const updatedProducts = [...state.BurgerMenu];
+    updatedProducts[prodIndex] = {
+      ...state.BurgerMenu[prodIndex],
+      Quantity: newFavStatus
+    };
+    return {
+      ...state,
+      BurgerMenu: updatedProducts
+    };
+};
+const quantitySelectSub = (state, action) => {
+  const prodIndex = state.BurgerMenu.findIndex(
+    p => p.id === action.productId
+  );
+  const newFavStatus = state.BurgerMenu[prodIndex].Quantity-1;
+  const updatedProducts = [...state.BurgerMenu];
+  updatedProducts[prodIndex] = {
+    ...state.BurgerMenu[prodIndex],
+    Quantity: newFavStatus
+  };
+  return {
+    ...state,
+    BurgerMenu: updatedProducts
+  };
+};
 
 
 
@@ -51,6 +80,8 @@ const reducer = ( state = initialState, action ) => {
         case actionTypes.FETCH_BURGER_MENU_SUCCESS: return fetchBurgerMenuSuccess( state, action );
         case actionTypes.FETCH_BURGER_MENU_FAIL: return fetchBurgerMenuFail( state, action );
         case actionTypes.TOGGLE_SELECT: return productReducer( state, action );
+        case actionTypes.QUANTITY_SELECT_ADD:return quantitySelectAdd(state,action);
+        case actionTypes.QUANTITY_SELECT_SUB:return quantitySelectSub(state,action);
         default: return state;
     }
 };

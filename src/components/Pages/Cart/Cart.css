@@ -1,0 +1,47 @@
+.div,h1,h2,h3,h4,h5,h6,p,img{
+    margin: 0;
+    padding: 0px;
+}
+.cartContentWrapper{
+    width: 70%;
+    border:1px solid #eee;
+    box-shadow: 0 2px 3px #ccc ;
+    box-sizing: border-box;
+    margin: 10% auto;
+    padding: 0px;
+    text-align: center;
+}
+.cartImgwrapper{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+.menuImg{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+.cartContent{
+    margin-top: 10%;
+    
+}
+.name{
+    /* float: left; */
+    font-weight: bold;
+}
+.cartPriceC{
+
+    margin-top: 10%;
+
+}
+.price{
+    /* float: right; */
+}
+.cartQuantityC{
+    margin-top: 10%;
+}
+.quantity{
+    /* float: left; */
+}
